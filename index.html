@@ -26,8 +26,584 @@
 <link rel="dns-prefetch" href="https://www.w3.org/">
 <!--End of DNS prefetch-->
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@1,700&family=Roboto+Mono:wght@300&family=Source+Sans+Pro&display=swap" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="mainStyles.css">
+<style>
+  html {
+  scroll-behavior:smooth;
+  height:100%;
+}
+body {
+  font-family: 'Roboto Mono', monospace;
+  user-select:none;
+  background-color:white;
+  /*height:auto;*/
+  height:100%;
+}
+h1 {
+  margin: 5vmin;
+  font-size:4vmin;
+}
+.header {
+  /*user-select:none;*/
+  position:relative;
+  font-family: 'Roboto Condensed', sans-serif;
+  width:100%;
+  font-size:6vmin;
+  background-color:orange;
+  text-align:center;
+  box-shadow:0vmin 1vmin 1vmin rgba(0,0,0,0.8);
+  margin-bottom:0.75vmin;
+}
+.bar {
+  border-radius:2vmin;
+  position:absolute;
+  width:7vmin;
+  height:1.25vmin;
+  top:1vmin;
+  left:1.5vmin;
+}
+#bar2 {
+  top:3vmin;
+}
+#bar3 {
+  top:5vmin;
+}
+.navbar {
+  background-color:white;
+  width:17%;
+  float:left;
+  position:sticky;
+  margin-right:7vmin;
+  display:none;
+  height:100%;
+  color:black;
+}
+.navbar ul li {
+  list-style-type:none;
+  margin-bottom:1vmin;
+  word-wrap:break-word;
+}
+.navbar ul li a{
+  text-decoration:none;
+}
+.navbar ul li:last-child{
+  text-decoration:none;
+  margin-bottom:0px;
+}
+.navbar ul li:hover {
+  font-weight:bold;
+}
+.navbar ul li a:link {
+  color:black;
+}
+.navbar ul li a:visited {
+  color:darkgrey;
+}
+.navbar ul li a:active {
+  color:orange;
+}
+.text { 
+  background-color:rgba(0,0,0,0.3);
+  color:white;
+  font-size:3vmin;
+  width:16.5vmin;
+  z-index:1;
+  position:absolute;
+  /*left:5vmin;
+  top:17vmin;*/
+  left:8%;
+  top:35%; 
+}
+form {
+  font-size:3vmin;
+}
+.dropdown {
+  margin:5vmin;
+  float:left;
+}
+.dropdown ul li {
+  display:none;
+  list-style-type:none;
+  margin:auto;
+  padding:0px;
+  background-color:light-grey;
+}
+.dropdown ul li:hover {
+  background-color:lightgrey;
+}
+.filterText {
+  float:left;
+  display:block;
+  border-left:0.2vmin solid orange;
+  width:5mvin;
+}
+.filterText:hover {
+  background-color:lightgrey;
+}
+.home {
+  color:white;
+  padding-top:15vmin;
+  padding-bottom:15vmin;
+  text-align:center;
+  background-image:url("IMG_1414.jpg");
+  background-repeat: no-repeat;
+  background-size:cover;
+  height:auto;
+  box-sizing:border-box;
+}
+.home h1 {
+  font-size:15vmin;
+}
+iframe {
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+  width:100%;
+  max-width:1000px;
+  height:57%;
+}
+.videoC {
+  display:none;
+  padding-top:5vmin;
+  padding-bottom:15vmin;
+  margin-left: auto;
+  margin-right: auto;
+  horizontal-align:center;
+  /*background-color:lightgrey;*/
+  width:100%;
+  height:100%;
+}
+.video {
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+  width:100%;
+  max-width:1000px;
+  height:auto;
+}
+.siteText {
+  text-align:center;
+  color:white;
+}
+.info {
+  text-align:center;
+  color:white;
+  width:auto;
+}
+.moreInfo {
+  display:none;
+  text-align:center;
+  width:auto;
+  height:auto;
+  background-color:#ff9900;
+  margin-right:25vmin;
+  margin-left:25vmin;
+}
+#container {
+  width:100%;
+  float:left;
+  height:100%;
+}
+.miPic {
+  width:5vmin;
+  height:5vmin;
+  position:absolute;
+  right:75vmin;
+  top:0vmin;
+}
+#site2C {
+  display:none;
+  background-image:url("STEAM_Icons/STEAM_2.JPG");
+  background-repeat:no-repeat;
+  background-size:cover;
+}
+.infoContainer {
+  position:relative;
+}
+.gridContainer {
+  justify-content:space-evenly;
+  align-content:center;
+  background-color:darkgrey;
+  display:grid;
+  grid-gap:2vmin;
+  grid-template-columns: auto auto auto auto;
+  width:100%;
+  height:70vmin;
+}
+.moreInfoGridC {
+  display:grid;
+  justify-content:space-evenly;
+  align-content:center;
+  grid-template-columns: auto auto auto;
+  width:100%;
+  background-color:yellow;
+  height:20vmin;
+}
+#zBox1 {
+  width:25%;
+}
+#zBox2 {
+  width:45%;
+  grid-column: 2 / 3;
+}
+#zBox3 {
+  width:25%;
+}
+/*.selectorBox {
+}*/
+.selectorBox img{
+  width:27vmin;
+  height:auto;
+  border-radius:2vmin;
+  box-shadow: 2vmin 2vmin 3vmin grey;
+}
+#site1C {
+  display:block;
+  background-image:url("STEAM_Icons/STEAM_1.png");
+  background-repeat:no-repeat;
+  background-size:cover;
+}
+#site9 {
+  grid-column: 2 / 3;
+}
+#site10 {
+  grid-column: 3 / 4;
+}
+.siteImg {
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+}
+#site9Img {
+  /*float:right;*/
+  margin-left:auto;
+  margin-right:auto;
+}
+#site9Img {
+  /*width:auto;
+  height:auto;*/
+}
+.textOver {
+  position:relative;
+  top:-25%;
+  text-decoration:none;
+  font-size:2vmin;
+  color:white;
+  text-align:center;
+  left:0px;
+  width:auto;
+  background-color:orange;
+}
+#textOver9 {
+  position:relative;
+  right:0px;
+}
+#noShowImg {
+  display:none;
+}
+#site3C {
+  background-image:url("STEAM_Icons/STEAM_3.JPG");
+  background-repeat:no-repeat;
+  background-size:cover;
+}
+#site4C {
+  background-image:url("STEAM_Icons/STEAM_4.JPG");
+  background-repeat:no-repeat;
+  background-size:cover;
+}
+#site5C {
+  background-image:url("STEAM_Icons/STEAM_5.JPG");
+  background-repeat:no-repeat;
+  background-size:cover;
+}
+#site6C {
+  background-image:url("STEAM_Icons/STEAM_6.JPG");
+  background-repeat:no-repeat;
+  background-size:cover;
+}
+#info5 {
+  width:auto;
+  background-color:rgba(0,0,0,0.5);
+  margin-right:25vmin;
+  margin-left:25vmin;
+}
+#info6 {
+  width:auto;
+  background-color:rgba(0,0,0,0.5);
+  margin-right:25vmin;
+  margin-left:25vmin;
+}
+#info8 {
+  width:auto;
+  background-color:rgba(0,0,0,0.5);
+  margin-right:25vmin;
+  margin-left:25vmin;
+}
+#info10 {
+  width:auto;
+  background-color:rgba(0,0,0,0.5);
+  margin-right:25vmin;
+  margin-left:25vmin;
+}
+#site7C {
+  background-image:url("STEAM_Icons/STEAM_7.JPG");
+  background-repeat:no-repeat;
+  background-size:cover;
+}
+#site8C {
+  background-image:url("STEAM_Icons/STEAM_8.JPG");
+  background-repeat:no-repeat;
+  background-size:cover;
+}
+#site9C {
+  background-image:url("STEAM_Icons/STEAM_9.JPG");
+  background-repeat:no-repeat;
+  background-size:cover;
+}
+#site10C {
+  background-image:url("STEAM_Icons/STEAM_10_2.jpg");
+  background-repeat:no-repeat;
+  background-size:cover;
+}
+@media screen and (max-width:970px) {
+  .header {
+    background-color:#ffa502;
+  }
+  .textOver {
+    font-size:4vmin;
+  }
+  .navbar {
+    width:100%;
+    height:auto;
+    display:none;
+    float:none;
+  }
+  .navbar ul li {
+    text-align:center;
+    margin-left:0px;
+    width:100%;
+  }
+  embed {
+    width:100%;
+    float:none;
+  }
+  .gridContainer {
+    grid-template-columns: auto auto auto auto auto auto;
+    height:90vmin;
+  }
+  #site9 {
+    /*This is used to set it back to normal*/
+    grid-column: 5 / 7;
+  }
+  #site10 {
+    grid-column: 3 / 5;
+  }
+  .selectorBox {
+    grid-column: span 2;
+  }
+  #site9Img {
+    float:none;
+  }
+  #site10Img {
+    float:none;
+  }
+  .moreInfo {
+    margin-right:0px;
+    margin-left:0px;
+  }
+  #info6 {
+    width:100%;
+    margin:0px;
+  }
+  #info8 {
+    width:100%;
+    margin:0px;
+  }
+  #site3Text {
+    width:100%;
+    background-color:rgba(0,0,0,0.5);
+  }
+}
+  /* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/robotocondensed/v19/ieVg2ZhZI2eCN5jzbjEETS9weq8-19eDtCYoYNNZQyQ.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/robotocondensed/v19/ieVg2ZhZI2eCN5jzbjEETS9weq8-19eDtCYoadNZQyQ.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/robotocondensed/v19/ieVg2ZhZI2eCN5jzbjEETS9weq8-19eDtCYoYdNZQyQ.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/robotocondensed/v19/ieVg2ZhZI2eCN5jzbjEETS9weq8-19eDtCYobtNZQyQ.woff2) format('woff2');
+  unicode-range: U+0370-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/robotocondensed/v19/ieVg2ZhZI2eCN5jzbjEETS9weq8-19eDtCYoYtNZQyQ.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/robotocondensed/v19/ieVg2ZhZI2eCN5jzbjEETS9weq8-19eDtCYoY9NZQyQ.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/robotocondensed/v19/ieVg2ZhZI2eCN5jzbjEETS9weq8-19eDtCYobdNZ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/robotomono/v12/L0xuDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_gPq_SeW4Ep0.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/robotomono/v12/L0xuDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_gPq_QOW4Ep0.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/robotomono/v12/L0xuDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_gPq_R-W4Ep0.woff2) format('woff2');
+  unicode-range: U+0370-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/robotomono/v12/L0xuDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_gPq_S-W4Ep0.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/robotomono/v12/L0xuDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_gPq_SuW4Ep0.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/robotomono/v12/L0xuDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_gPq_ROW4.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/sourcesanspro/v14/6xK3dSBYKcSV-LCoeQqfX1RYOo3qNa7lqDY.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/sourcesanspro/v14/6xK3dSBYKcSV-LCoeQqfX1RYOo3qPK7lqDY.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/sourcesanspro/v14/6xK3dSBYKcSV-LCoeQqfX1RYOo3qNK7lqDY.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/sourcesanspro/v14/6xK3dSBYKcSV-LCoeQqfX1RYOo3qO67lqDY.woff2) format('woff2');
+  unicode-range: U+0370-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/sourcesanspro/v14/6xK3dSBYKcSV-LCoeQqfX1RYOo3qN67lqDY.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/sourcesanspro/v14/6xK3dSBYKcSV-LCoeQqfX1RYOo3qNq7lqDY.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/sourcesanspro/v14/6xK3dSBYKcSV-LCoeQqfX1RYOo3qOK7l.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
 </head>
 <body>
 <div class="header" id="header">
@@ -185,6 +761,474 @@ The video is having trouble playing with the browser you are running it in.
 </div>
 
 </body>
-<script src="mainScript.js"></script>
-</html>
+<script>
+	window.onload = function (){
+var navButtonClicked = false;
+var mouseOnInfo = false;
+var mouseOnMoreInfo = false;
+var mouseOnInfo2 = false;
+var mouseOnMoreInfo2 = false;
+var mouseOnInfo3 = false;
+var mouseOnMoreInfo3 = false;
+var infoClicked = false;
+var infoClicked2 = false;
+var infoClicked3 = false;
+var infoClicked4 = false;
+var infoClicked5 = false;
+var infoClicked6 = false;
+var infoClicked7 = false;
+var infoClicked8 = false;
+var infoClicked9 = false;
+var infoClicked10 = false;
 
+var header = document.getElementById("header");
+var navButton = document.getElementById("navButton");
+var bar1 = document.getElementById("bar1");
+var bar2 = document.getElementById("bar2");
+var bar3 = document.getElementById("bar3");
+var navbar = document.getElementById("navbar");
+var container = document.getElementById("container");
+var info = document.getElementById("info");
+var moreInfo = document.getElementById("moreInfo");
+var info2 = document.getElementById("info2");
+var moreInfo2 = document.getElementById("moreInfo2");
+var info3 = document.getElementById("info3");
+var moreInfo3 = document.getElementById("moreInfo3");
+var info4 = document.getElementById("info4");
+var moreInfo4 = document.getElementById("moreInfo4");
+var info5 = document.getElementById("info5");
+var moreInfo5 = document.getElementById("moreInfo5");
+var info6 = document.getElementById("info6");
+var moreInfo6 = document.getElementById("moreInfo6");
+var info7 = document.getElementById("info7");
+var moreInfo7 = document.getElementById("moreInfo7");
+var info8 = document.getElementById("info8");
+var moreInfo8 = document.getElementById("moreInfo8");
+var info9 = document.getElementById("info9");
+var moreInfo9 = document.getElementById("moreInfo9");
+var info10 = document.getElementById("info10");
+var moreInfo10 = document.getElementById("moreInfo10");
+var site1 = document.getElementById("site1");
+var site2 = document.getElementById("site2");
+var site3 = document.getElementById("site3");
+var site4 = document.getElementById("site4");
+var site5 = document.getElementById("site5");
+var site6 = document.getElementById("site6");
+var site7 = document.getElementById("site7");
+var site8 = document.getElementById("site8");
+var site9 = document.getElementById("site9");
+var site10 = document.getElementById("site10");
+var site1C = document.getElementById("site1C");
+var site2C = document.getElementById("site2C");
+var site3C = document.getElementById("site3C");
+var site4C = document.getElementById("site4C");
+var site5C = document.getElementById("site5C");
+var site6C = document.getElementById("site6C");
+var site7C = document.getElementById("site7C");
+var site8C = document.getElementById("site8C");
+var site9C = document.getElementById("site9C");
+var site10C = document.getElementById("site10C");
+var homeNav = document.getElementById("homeNav");
+var site1Nav = document.getElementById("site1Nav");
+var site2Nav = document.getElementById("site2Nav");
+var site3Nav = document.getElementById("site3Nav");
+var site4Nav = document.getElementById("site4Nav");
+var site5Nav = document.getElementById("site5Nav");
+var site6Nav = document.getElementById("site6Nav");
+var site7Nav = document.getElementById("site7Nav");
+var site8Nav = document.getElementById("site8Nav");
+var site9Nav = document.getElementById("site9Nav");
+var site10Nav = document.getElementById("site10Nav");
+var siteImg = document.getElementsByClassName("siteImg");
+var width = window.innerWidth || document.documentElement.clientWidth || 
+document.body.clientWidth;
+
+navButton.onclick = function() {
+    if (navButtonClicked == false) {
+      container.style.width = "79.1%"; //79.1%
+      navbar.style.display = "block";
+      bar1.style.display = "none";
+      bar3.style.display = "none";
+      navButtonClicked = true;
+      if (width < 1215) { //used to be 1180
+        container.style.width = "77.1%";
+        for (var i = 0; i < 9; i++) {
+          siteImg[i].style.width = "23vmin";
+        }
+      }
+      if (width < 1100) {
+        container.style.width = "76.1%";
+        for (var i = 0; i < 9; i++) {
+          siteImg[i].style.width = "20vmin";
+        }
+      }
+      if (width < 971) { //used to be 600
+        for (var i = 0; i < 9; i++) {
+          siteImg[i].style.width = "27vmin";
+        }
+        container.style.width = "100%";
+        navbar.style.fontSize = "3vmin";
+      }
+    }
+    else {
+      container.style.width = "100%"; //after 970px in width, tiles get too large
+      navbar.style.display = "none";
+      bar1.style.display = "block";
+      bar3.style.display = "block";
+      navButtonClicked = false;
+      for (var i = 0; i < 9; i++) {
+        siteImg[i].style.width = "27vmin";
+      }
+    }
+
+}
+site1Nav.onclick = function() {
+  site1C.style.display = "block";
+  site2C.style.display = "none";
+  site3C.style.display = "none";
+  site4C.style.display = "none";
+  site5C.style.display = "none";
+  site6C.style.display = "none";
+  site7C.style.display = "none";
+  site8C.style.display = "none";
+  site9C.style.display = "none";
+  site10C.style.display = "none";
+}
+site2Nav.onclick = function() {
+  site1C.style.display = "none";
+  site2C.style.display = "block";
+  site3C.style.display = "none";
+  site4C.style.display = "none";
+  site5C.style.display = "none";
+  site6C.style.display = "none";
+  site7C.style.display = "none";
+  site8C.style.display = "none";
+  site9C.style.display = "none";
+  site10C.style.display = "none";
+}
+site3Nav.onclick = function() {
+  site1C.style.display = "none";
+  site2C.style.display = "none";
+  site3C.style.display = "block";
+  site4C.style.display = "none";
+  site5C.style.display = "none";
+  site6C.style.display = "none";
+  site7C.style.display = "none";
+  site8C.style.display = "none";
+  site9C.style.display = "none";
+  site10C.style.display = "none";
+}
+site4Nav.onclick = function() {
+  site1C.style.display = "none";
+  site2C.style.display = "none";
+  site3C.style.display = "none";
+  site4C.style.display = "block";
+  site5C.style.display = "none";
+  site6C.style.display = "none";
+  site7C.style.display = "none";
+  site8C.style.display = "none";
+  site9C.style.display = "none";
+  site10C.style.display = "none";
+}
+site5Nav.onclick = function() {
+  site1C.style.display = "none";
+  site2C.style.display = "none";
+  site3C.style.display = "none";
+  site4C.style.display = "none";
+  site5C.style.display = "block";
+  site6C.style.display = "none";
+  site7C.style.display = "none";
+  site8C.style.display = "none";
+  site9C.style.display = "none";
+  site10C.style.display = "none";
+}
+site6Nav.onclick = function() {
+  site1C.style.display = "none";
+  site2C.style.display = "none";
+  site3C.style.display = "none";
+  site4C.style.display = "none";
+  site5C.style.display = "none";
+  site6C.style.display = "block";
+  site7C.style.display = "none";
+  site8C.style.display = "none";
+  site9C.style.display = "none";
+  site10C.style.display = "none";
+}
+site7Nav.onclick = function() {
+  site1C.style.display = "none";
+  site2C.style.display = "none";
+  site3C.style.display = "none";
+  site4C.style.display = "none";
+  site5C.style.display = "none";
+  site6C.style.display = "none";
+  site7C.style.display = "block";
+  site8C.style.display = "none";
+  site9C.style.display = "none";
+  site10C.style.display = "none";
+}
+site8Nav.onclick = function() {
+  site1C.style.display = "none";
+  site2C.style.display = "none";
+  site3C.style.display = "none";
+  site4C.style.display = "none";
+  site5C.style.display = "none";
+  site6C.style.display = "none";
+  site7C.style.display = "none";
+  site8C.style.display = "block";
+  site9C.style.display = "none";
+  site10C.style.display = "none";
+}
+site9Nav.onclick = function() {
+  site1C.style.display = "none";
+  site2C.style.display = "none";
+  site3C.style.display = "none";
+  site4C.style.display = "none";
+  site5C.style.display = "none";
+  site6C.style.display = "none";
+  site7C.style.display = "none";
+  site8C.style.display = "none";
+  site9C.style.display = "block";
+  site10C.style.display = "none";
+}
+site10Nav.onclick = function() {
+  site1C.style.display = "none";
+  site2C.style.display = "none";
+  site3C.style.display = "none";
+  site4C.style.display = "none";
+  site5C.style.display = "none";
+  site6C.style.display = "none";
+  site7C.style.display = "none";
+  site8C.style.display = "none";
+  site9C.style.display = "none";
+  site10C.style.display = "block";
+}
+navbar.onclick = function() {
+  navbar.style.display = "none";
+  container.style.width = "100%";
+  bar1.style.display = "block";
+  bar3.style.display = "block";
+  navButtonClicked = false;
+}
+info.onclick = function() {
+  if (infoClicked == false) {
+    moreInfo.style.display = "block";
+    infoClicked = true;
+  }
+  else {
+    moreInfo.style.display = "none";
+    infoClicked = false;
+  }
+}
+info2.onclick = function() {
+  if (infoClicked2 == false) {
+    moreInfo2.style.display = "block";
+    infoClicked2 = true;
+  }
+  else {
+    moreInfo2.style.display = "none";
+    infoClicked2 = false;
+  }
+}
+info3.onclick = function() {
+  if (infoClicked3 == false) {
+    moreInfo3.style.display = "block";
+    infoClicked3 = true;
+  }
+  else {
+    moreInfo3.style.display = "none";
+    infoClicked3 = false;
+  }
+}
+info4.onclick = function() {
+  if (infoClicked4 == false) {
+    moreInfo4.style.display = "block";
+    infoClicked4 = true;
+  }
+  else {
+    moreInfo4.style.display = "none";
+    infoClicked4 = false;
+  }
+}
+info5.onclick = function() {
+  if (infoClicked5 == false) {
+    moreInfo5.style.display = "block";
+    infoClicked5 = true;
+  }
+  else {
+    moreInfo5.style.display = "none";
+    infoClicked5 = false;
+  }
+}
+info6.onclick = function() {
+  if (infoClicked6 == false) {
+    moreInfo6.style.display = "block";
+    infoClicked6 = true;
+  }
+  else {
+    moreInfo6.style.display = "none";
+    infoClicked6 = false;
+  }
+}
+info7.onclick = function() {
+  if (infoClicked7 == false) {
+    moreInfo7.style.display = "block";
+    infoClicked7 = true;
+  }
+  else {
+    moreInfo7.style.display = "none";
+    infoClicked7 = false;
+  }
+}
+info8.onclick = function() {
+  if (infoClicked8 == false) {
+    moreInfo8.style.display = "block";
+    infoClicked8 = true;
+  }
+  else {
+    moreInfo8.style.display = "none";
+    infoClicked8 = false;
+  }
+}
+info9.onclick = function() {
+  if (infoClicked9 == false) {
+    moreInfo9.style.display = "block";
+    infoClicked9 = true;
+  }
+  else {
+    moreInfo9.style.display = "none";
+    infoClicked9 = false;
+  }
+}
+info10.onclick = function() {
+  if (infoClicked10 == false) {
+    moreInfo10.style.display = "block";
+    infoClicked10 = true;
+  }
+  else {
+    moreInfo10.style.display = "none";
+    infoClicked10 = false;
+  }
+}
+site1.onclick = function() {
+  site1C.style.display = "block";
+  site2C.style.display = "none";
+  site3C.style.display = "none";
+  site4C.style.display = "none";
+  site5C.style.display = "none";
+  site6C.style.display = "none";
+  site7C.style.display = "none";
+  site8C.style.display = "none";
+  site9C.style.display = "none";
+  site10C.style.display = "none";
+}
+site2.onclick = function() {
+  site1C.style.display = "none";
+  site2C.style.display = "block";
+  site3C.style.display = "none";
+  site4C.style.display = "none";
+  site5C.style.display = "none";
+  site6C.style.display = "none";
+  site7C.style.display = "none";
+  site8C.style.display = "none";
+  site9C.style.display = "none";
+  site10C.style.display = "none";
+}
+site3.onclick = function() {
+  site1C.style.display = "none";
+  site2C.style.display = "none";
+  site3C.style.display = "block";
+  site4C.style.display = "none";
+  site5C.style.display = "none";
+  site6C.style.display = "none";
+  site7C.style.display = "none";
+  site8C.style.display = "none";
+  site9C.style.display = "none";
+  site10C.style.display = "none";
+}
+site4.onclick = function() {
+  site1C.style.display = "none";
+  site2C.style.display = "none";
+  site3C.style.display = "none";
+  site4C.style.display = "block";
+  site5C.style.display = "none";
+  site6C.style.display = "none";
+  site7C.style.display = "none";
+  site8C.style.display = "none";
+  site9C.style.display = "none";
+  site10C.style.display = "none";
+}
+site5.onclick = function() {
+  site1C.style.display = "none";
+  site2C.style.display = "none";
+  site3C.style.display = "none";
+  site4C.style.display = "none";
+  site5C.style.display = "block";
+  site6C.style.display = "none";
+  site7C.style.display = "none";
+  site8C.style.display = "none";
+  site9C.style.display = "none";
+  site10C.style.display = "none";
+}
+site6.onclick = function() {
+  site1C.style.display = "none";
+  site2C.style.display = "none";
+  site3C.style.display = "none";
+  site4C.style.display = "none";
+  site5C.style.display = "none";
+  site6C.style.display = "block";
+  site7C.style.display = "none";
+  site8C.style.display = "none";
+  site9C.style.display = "none";
+  site10C.style.display = "none";
+}
+site7.onclick = function() {
+  site1C.style.display = "none";
+  site2C.style.display = "none";
+  site3C.style.display = "none";
+  site4C.style.display = "none";
+  site5C.style.display = "none";
+  site6C.style.display = "none";
+  site7C.style.display = "block";
+  site8C.style.display = "none";
+  site9C.style.display = "none";
+  site10C.style.display = "none";
+}
+site8.onclick = function() {
+  site1C.style.display = "none";
+  site2C.style.display = "none";
+  site3C.style.display = "none";
+  site4C.style.display = "none";
+  site5C.style.display = "none";
+  site6C.style.display = "none";
+  site7C.style.display = "none";
+  site8C.style.display = "block";
+  site9C.style.display = "none";
+  site10C.style.display = "none";
+}
+site9.onclick = function() {
+  site1C.style.display = "none";
+  site2C.style.display = "none";
+  site3C.style.display = "none";
+  site4C.style.display = "none";
+  site5C.style.display = "none";
+  site6C.style.display = "none";
+  site7C.style.display = "none";
+  site8C.style.display = "none";
+  site9C.style.display = "block";
+  site10C.style.display = "none";
+}
+site10.onclick = function() {
+  site1C.style.display = "none";
+  site2C.style.display = "none";
+  site3C.style.display = "none";
+  site4C.style.display = "none";
+  site5C.style.display = "none";
+  site6C.style.display = "none";
+  site7C.style.display = "none";
+  site8C.style.display = "none";
+  site9C.style.display = "none";
+  site10C.style.display = "block";
+}
+}
+</script>
+</html>
